@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+</head>
+<body>
+  <h1>Welcome to your Dashboard!</h1>
+  <p>This page is protected and can only be accessed after login.</p>
+
+  <script>
+    // Check if the user is logged in
+    if (sessionStorage.getItem('loggedIn') !== 'true') {
+      window.location.href = 'index.html'; // Redirect to login page if not logged in
+    }
+  </script>
+</body>
+</html>
