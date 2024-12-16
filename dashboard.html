@@ -1,19 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snowfall Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000; /* Black background for contrast */
+        }
+
+        /* Snowfall Container */
+        .snowfall {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        /* Layer 1: Fast-moving Snow */
+        .snow-layer-1 {
+            background: url('https://i.ibb.co/DbKS19P/snow.png') repeat;
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            animation: snowfall-1 10s linear infinite;
+        }
+
+        @keyframes snowfall-1 {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-50%, 50%);
+            }
+        }
+
+        /* Layer 2: Slow-moving Snow */
+        .snow-layer-2 {
+            background: url('https://i.ibb.co/DbKS19P/snow.png') repeat;
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            animation: snowfall-2 20s linear infinite;
+            opacity: 0.7; /* Slight transparency for depth */
+        }
+
+        @keyframes snowfall-2 {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(50%, -50%);
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>Welcome to your Dashboard!</h1>
-  <p>This page is protected and can only be accessed after login.</p>
-
-  <script>
-    // Check if the user is logged in
-    if (sessionStorage.getItem('loggedIn') !== 'true') {
-      window.location.href = 'index.html'; // Redirect to login page if not logged in
-    }
-  </script>
+    <!-- Snowfall Layers -->
+    <div class="snowfall">
+        <div class="snow-layer-1"></div>
+        <div class="snow-layer-2"></div>
+    </div>
 </body>
 </html>
