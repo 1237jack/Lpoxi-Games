@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="snow.css">
-  <link rel="stylesheet" href="button.css"> <!-- Link to button styles -->
-  <link href="https://fonts.googleapis.com/css2?family=Pushster&display=swap" rel="stylesheet"> <!-- Add Pushster font -->
+  <link rel="stylesheet" href="styles.css"> <!-- Main styles -->
+  <link rel="stylesheet" href="snow.css"> <!-- Snow animation styles -->
+  <link rel="stylesheet" href="button.css"> <!-- Button-specific styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Pushster&display=swap" rel="stylesheet"> <!-- Pushster font -->
   <style>
     /* Center text vertically and horizontally */
     .dashboard-header {
@@ -30,9 +30,9 @@
       font-size: 2em;
     }
 
-    /* Center the button */
+    /* Ensure proper spacing for the button */
     .button {
-      margin-top: 20px; /* Space between text and button */
+      margin-top: 20px;
     }
   </style>
   <script>
@@ -44,14 +44,17 @@
 </head>
 <body>
   <header class="dashboard-header">
+    <!-- Snow animations -->
     <div class="snow"></div>
     <div class="snow2"></div>
+
+    <!-- Header text -->
     <div class="text">
       <h1>MERRY CHRISTMAS</h1>
       <p>And A Happy New Year</p>
     </div>
 
-    <!-- Add button for games page -->
+    <!-- Button linking to the Games page -->
     <button type="button" class="button" onclick="window.location.href='games.html';">
       <span class="fold"></span>
 
@@ -68,7 +71,23 @@
         <i class="point"></i>
       </div>
 
-      <span class="inner">Games</span> <!-- Ensure text is visible -->
+      <span class="inner">
+        <svg
+          class="icon"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2.5"
+        >
+          <polyline
+            points="13.18 1.37 13.18 9.64 21.45 9.64 10.82 22.63 10.82 14.36 2.55 14.36 13.18 1.37"
+          ></polyline>
+        </svg>
+        Games
+      </span>
     </button>
   </header>
 </body>
