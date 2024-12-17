@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="snow.css">
+  <!-- Add any additional styles for the games page -->
+</head>
+<body>
+  <script>
+    // Check if the user is logged in
+    if (!sessionStorage.getItem('loggedIn')) {
+      // Redirect to the login page if not logged in
+      window.location.href = 'index.html';
+    }
+  </script>
+
+  <header class="dashboard-header">
+    <div class="snow"></div>
+    <div class="snow2"></div>
+    <div class="text">
+      <h1>Welcome to the Games Page</h1>
+      <p>Explore and play exciting games!</p>
+    </div>
+  </header>
+
+  <!-- Add game content here -->
+
+</body>
+</html>
