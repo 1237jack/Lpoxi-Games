@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="snow.css">
+  <link rel="stylesheet" href="snow.css"> <!-- Link to snow.css -->
   <!-- Link to Pushster font -->
   <link href="https://fonts.googleapis.com/css2?family=Pushster&display=swap" rel="stylesheet">
   <style>
@@ -29,6 +29,46 @@
       font-family: 'Pushster', cursive;
       font-size: 2em;
     }
+
+    /* Style for the button */
+    .button {
+      --h-button: 48px;
+      --w-button: 102px;
+      --round: 0.75rem;
+      cursor: pointer;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      background: radial-gradient(
+          65.28% 65.28% at 50% 100%,
+          rgba(223, 113, 255, 0.8) 0%,
+          rgba(223, 113, 255, 0) 100%
+        ),
+        linear-gradient(0deg, #7a5af8, #7a5af8);
+      border-radius: var(--round);
+      border: none;
+      outline: none;
+      padding: 12px 18px;
+      margin-top: 20px; /* Space between text and button */
+    }
+
+    .button .inner {
+      z-index: 2;
+      gap: 6px;
+      position: relative;
+      width: 100%;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.5;
+      transition: color 0.2s ease-in-out;
+    }
   </style>
 </head>
 <body>
@@ -47,6 +87,42 @@
       <h1>MERRY CHRISTMAS</h1>
       <p>And A Happy New Year</p>
     </div>
+
+    <!-- Add the button to redirect to the games page -->
+    <button type="button" class="button" onclick="window.location.href='games.html';">
+      <span class="fold"></span>
+
+      <div class="points_wrapper">
+        <i class="point"></i>
+        <i class="point"></i>
+        <i class="point"></i>
+        <i class="point"></i>
+        <i class="point"></i>
+        <i class="point"></i>
+        <i class="point"></i>
+        <i class="point"></i>
+        <i class="point"></i>
+        <i class="point"></i>
+      </div>
+
+      <span class="inner">
+        <svg
+          class="icon"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2.5"
+        >
+          <polyline
+            points="13.18 1.37 13.18 9.64 21.45 9.64 10.82 22.63 10.82 14.36 2.55 14.36 13.18 1.37"
+          ></polyline>
+        </svg>
+        Games
+      </span>
+    </button>
   </header>
 </body>
 </html>
