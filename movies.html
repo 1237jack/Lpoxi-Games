@@ -13,6 +13,7 @@
       overflow: hidden;
       position: relative;
     }
+
     iframe {
       position: fixed;
       top: 0;
@@ -20,19 +21,19 @@
       width: 100vw;
       height: 100vh;
       border: none;
-      z-index: 1; /* Make sure iframe is behind snowfall */
+      z-index: 1; /* Make sure iframe is below the snowfall */
     }
-    
+
     /* Snowfall effect styling */
     .snow, .snow2 {
-      position: absolute;
+      position: fixed; /* Fixed to ensure it stays in place when scrolling */
       top: 0;
       left: 0;
       width: 200%;
       height: 200%;
       background: url('https://i.ibb.co/GCRjwL7/snow.png') repeat;
       pointer-events: none; /* Allow interaction with other elements */
-      z-index: 0;
+      z-index: 2; /* Snowfall will be on top of the iframe */
     }
 
     .snow {
