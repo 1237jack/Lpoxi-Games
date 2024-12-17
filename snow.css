@@ -18,12 +18,12 @@ body {
 
 .snow {
   background-size: 50em;
-  animation: snowfall 30s linear infinite; /* Diagonal down-right */
+  animation: snowfall 60s linear infinite; /* Increased duration to slow it down */
 }
 
 .snow2 {
   background-size: 50em;
-  animation: snowfall-reverse 60s linear infinite; /* Diagonal down-left */
+  animation: snowfall-reverse 120s linear infinite; /* Increased duration to make it even slower */
   opacity: 0.5;
 }
 
