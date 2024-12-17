@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Movies</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
     /* Full-screen iframe styling */
     body {
@@ -20,14 +21,15 @@
     }
   </style>
   <script>
-    // Redirect to login page if the user is not logged in
+    // Ensure user is logged in before showing the page
     if (!sessionStorage.getItem('loggedIn')) {
-      window.location.href = 'index.html';
+      // Optionally, you can show a message instead of redirecting
+      document.body.innerHTML = '<h1>You need to log in first!</h1><p><a href="index.html">Go to Login Page</a></p>';
     }
   </script>
 </head>
 <body>
-  <!-- Embed the movies webpage -->
+  <!-- Embed the Movies webpage securely if logged in -->
   <iframe src="https://1237jack.github.io/Movvvvvfdhdhdfhdfh/" title="Movies Page"></iframe>
 </body>
 </html>
