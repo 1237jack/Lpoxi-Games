@@ -5,90 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="snow.css"> <!-- Link to snow.css -->
-  <!-- Link to Pushster font -->
-  <link href="https://fonts.googleapis.com/css2?family=Pushster&display=swap" rel="stylesheet">
-  <style>
-    /* Center text vertically and horizontally */
-    .dashboard-header {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      height: 100vh;
-    }
-
-    /* Apply Pushster font */
-    .text h1 {
-      font-family: 'Pushster', cursive;
-      font-size: 4em;
-    }
-
-    .text p {
-      font-family: 'Pushster', cursive;
-      font-size: 2em;
-    }
-
-    /* Style for the button */
-    .button {
-      --h-button: 48px;
-      --w-button: 102px;
-      --round: 0.75rem;
-      cursor: pointer;
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      transition: all 0.25s ease;
-      background: radial-gradient(
-          65.28% 65.28% at 50% 100%,
-          rgba(223, 113, 255, 0.8) 0%,
-          rgba(223, 113, 255, 0) 100%
-        ),
-        linear-gradient(0deg, #7a5af8, #7a5af8);
-      border-radius: var(--round);
-      border: none;
-      outline: none;
-      padding: 12px 18px;
-      margin-top: 20px; /* Space between text and button */
-    }
-
-    .button .inner {
-      z-index: 2;
-      gap: 6px;
-      position: relative;
-      width: 100%;
-      color: white;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 1.5;
-      transition: color 0.2s ease-in-out;
-    }
-  </style>
-</head>
-<body>
+  <link rel="stylesheet" href="snow.css">
+  <link rel="stylesheet" href="button.css"> <!-- Link to button styles -->
   <script>
-    // Check if the user is logged in
+    // Redirect users if not logged in
     if (!sessionStorage.getItem('loggedIn')) {
-      // Redirect to the login page if not logged in
       window.location.href = 'index.html';
     }
   </script>
-
+</head>
+<body>
   <header class="dashboard-header">
     <div class="snow"></div>
     <div class="snow2"></div>
     <div class="text">
-      <h1>MERRY CHRISTMAS</h1>
-      <p>And A Happy New Year</p>
+      <h1>MERRY GAMES</h1>
+      <p>And A Happy New LPROXI</p>
     </div>
 
-    <!-- Add the button to redirect to the games page -->
+    <!-- Add button for games page -->
     <button type="button" class="button" onclick="window.location.href='games.html';">
       <span class="fold"></span>
 
