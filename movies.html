@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="snow.css">
+</head>
+<body>
+  <script>
+    // Check if the user is logged in
+    if (!sessionStorage.getItem('loggedIn')) {
+      // Redirect to the login page if not logged in
+      window.location.href = 'index.html';
+    }
+  </script>
+
+  <header class="dashboard-header">
+    <div class="snow"></div>
+    <div class="snow2"></div>
+    <div class="text">
+      <h1>Welcome to the Movies Page</h1>
+      <p>Watch and enjoy the latest movies!</p>
+    </div>
+  </header>
+</body>
+</html>
