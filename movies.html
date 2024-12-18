@@ -21,7 +21,7 @@
       width: 100vw;
       height: 100vh;
       border: none;
-      z-index: 1; /* Make sure iframe is below the snowfall */
+      z-index: 1; /* Ensure iframe is below the snowfall */
     }
 
     /* Snowfall effect styling */
@@ -69,6 +69,11 @@
     // Ensure user is logged in before showing the page
     if (!sessionStorage.getItem('loggedIn')) {
       document.body.innerHTML = '<h1>You need to log in first!</h1><p><a href="index.html">Go to Login Page</a></p>';
+    } else {
+      // Decode Base64 and embed iframe
+      var base64Url = "aHR0cHM6Ly8xMjM3amFjay5naXRodWIuaW8vTW92dnZ2dmZkaGRoZGZoZGZoLw==";
+      var decodedUrl = atob(base64Url);
+      document.getElementById('movieIframe').src = decodedUrl;
     }
   </script>
 </head>
@@ -78,6 +83,6 @@
   <div class="snow2"></div>
 
   <!-- Embed the Movies webpage securely if logged in -->
-  <iframe src="https://1237jack.github.io/Movvvvvfdhdhdfhdfh/" title="Movies Page"></iframe>
+  <iframe id="movieIframe" title="Movies Page"></iframe>
 </body>
 </html>
