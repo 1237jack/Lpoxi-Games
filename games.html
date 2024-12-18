@@ -3,30 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Games</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="snow.css">
-  <!-- Add any additional styles for the games page -->
-</head>
-<body>
+  <title>Movies</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Main styles -->
+  <link rel="stylesheet" href="snow.css"> <!-- Snowfall effect styles -->
+  <style>
+    /* Full-screen iframe styling */
+    body {
+      margin: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    iframe {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      z-index: 1; /* Make sure iframe is behind the snowfall */
+    }
+
+    /* Snowfall effect styling */
+    .snow, .snow2 {
+      position: fixed; /* Fixed to ensure it stays in place when scrolling */
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: url('https://i.ibb.co/GCRjwL7/snow.png') repeat;
+      pointer-events: none; /* Allow interaction with other elements */
+      z-index: 2; /* Snowfall will be on top of the iframe */
+    }
+
+    .snow {
+      background-size: 50em;
+      animation: snowfall 60s linear infinite; /* Increased duration to slow it down */
+    }
+
+    .snow2 {
+      background-size: 50em;
+      animation: snowfall-reverse 120s linear infinite; /* Increased duration to make it even slower */
+      opacity: 0.5;
+    }
+
+    @keyframes snowfall {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: -200% 200%;
+      }
+    }
+
+    @keyframes snowfall-reverse {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 200% 200%;
+      }
+    }
+  </style>
   <script>
-    // Check if the user is logged in
+    // Ensure user is logged in before showing the page
     if (!sessionStorage.getItem('loggedIn')) {
-      // Redirect to the login page if not logged in
-      window.location.href = 'index.html';
+      document.body.innerHTML = '<h1>You need to log in first!</h1><p><a href="index.html">Go to Login Page</a></p>';
     }
   </script>
+</head>
+<body>
+  <!-- Snowfall effect -->
+  <div class="snow"></div>
+  <div class="snow2"></div>
 
-  <header class="dashboard-header">
-    <div class="snow"></div>
-    <div class="snow2"></div>
-    <div class="text">
-      <h1>Welcome to the Games Page</h1>
-      <p>Explore and play exciting games!</p>
-    </div>
-  </header>
-
-  <!-- Add game content here -->
-
+  <!-- Embed the Movies webpage securely if logged in -->
+  <iframe src="https://1237jack.github.io/Movvvvvfdhdhdfhdfh/" title="Movies Page"></iframe>
 </body>
 </html>
